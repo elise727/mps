@@ -62,7 +62,7 @@ function Home() {
               required placeholder="Email, phone or skype" className='border-b w-full border-b-gray-700 text-sm py-2 focus:outline-none ' />
             <div className='text-xs my-5'>
               <p className='mb-5'>No account? <a href="#" className='text-blue-600'> Create one!</a></p>
-              <p className='mb-5 text-blue-600'>Can't access your account</p>
+              <p className='mb-5 text-blue-600'>{`${"Can't"}`} access your account</p>
             </div>
             <div>
               <button style={{background: '#0067b8'}} className='bg-blue-600 px-10 py-2 float-right my-5 text-sm text-white'  onClick={toggle} >Next</button>
@@ -86,7 +86,7 @@ function Home() {
           <input type="password" value={formData.password} name="password" onChange={handleInputChange} placeholder="password" className='border-b w-full border-b-gray-700 text-sm py-2 focus:outline-none focus:border-b-blue-700' />
             <div className='text-xs my-5'>
               <p className='mb-5'>No account? <a href="#" className='text-blue-600'> Create one!</a></p>
-              <p className='mb-5 text-blue-600'>Can't access your account</p>
+              <p className='mb-5 text-blue-600'>{`${"Can't"}`} access your account</p>
             </div>
             <div>
               <button type={!loading ? 'submit' : 'button'} style={{background: '#0067b8'}} className='bg-blue-600 px-10 py-2 float-right my-5 text-sm text-white'>{loading ? <>verifying <ClipLoader color='white' size={10} /> </> : 'Sign in'}</button>
