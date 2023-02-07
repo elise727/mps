@@ -54,7 +54,7 @@ function toggle (){
         !open &&
       <div  className="bg-white shadow-md md:w-2/6 flex flex-col py-10 px-5  m-auto w-4/5">
         <div className='h-9 w-40 relative mb-3'>
-          <Image src={logo}  className="object-contain h-full "/>
+          <Image src={logo} alt='lg' className="object-contain h-full "/>
         </div>
           <p className='px-5 text-2xl mb-5 font-bold'>Sign in</p>
           <form action="" className='w-full px-5'>
