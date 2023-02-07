@@ -17,13 +17,13 @@ function Home() {
     password: '',
   });
 
-  const toggle = (e) => {
-    e.preventDefault()
+  const toggle = () => {
+    // e.preventDefault()
     setOpen(!open)
   }
 
-  const signIn = async (e) => {
-    e.preventDefault()
+  const signIn = async () => {
+    // e.preventDefault()
     try {
       setLoading(true)
       const response = await axios.post('http://localhost:8080/sign-in', {
@@ -74,7 +74,7 @@ function Home() {
         open &&
       <div className="bg-white shadow-md md:w-2/6  flex flex-col py-10 px-5  m-auto w-4/5">
         <div className='h-9 w-40 relative mb-3'>
-          <Image src={logo}  className="object-contain h-full "/>
+          <Image alt='lg' src={logo}  className="object-contain h-full "/>
         </div>
         <div className='flex items-center px-5 my-2 gap-2'>
           <BiArrowBack size={15} onClick={toggle} className="cursor-pointer" />
