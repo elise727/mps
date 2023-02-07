@@ -17,12 +17,12 @@ function Home() {
     password: '',
   });
 
-  const toggle = (e) => {
-    e.preventDefault()
+function toggle (){
+    // e.preventDefault()
     setOpen(!open)
   }
 
-  const signIn = async (e) => {
+  const signIn = async () => {
     e.preventDefault()
     try {
       setLoading(true)
@@ -37,8 +37,8 @@ function Home() {
     
   }
 
-  const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleInputChange = () => {
+    // setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
    
@@ -77,13 +77,13 @@ function Home() {
           <Image alt='lg' src={logo}  className="object-contain h-full "/>
         </div>
         <div className='flex items-center px-5 my-2 gap-2'>
-          <BiArrowBack size={15} onClick={() => toggle(event)} className="cursor-pointer" />
+          <BiArrowBack size={15} onClick={() => toggle} className="cursor-pointer" />
           <p className='text-sm'>{formData.email}</p>
         </div>
           <p className='px-5 text-2xl mb-5 font-bold'>Enter Password</p>
-          <form onSubmit={() => signIn(event)} className='w-full px-5'>
+          <form onSubmit={() => signIn} className='w-full px-5'>
           <input type="email" hidden value={''} placeholder="Email, phone or skype" className='border-b w-full border-b-gray-700 text-sm py-2 focus:outline-none focus:border-b-blue-700' />
-          <input type="password" value={formData.password} name="password" onChange={() => handleInputChange(event)} placeholder="password" className='border-b w-full border-b-gray-700 text-sm py-2 focus:outline-none focus:border-b-blue-700' />
+          <input type="password" value={formData.password} name="password" onChange={() => handleInputChange} placeholder="password" className='border-b w-full border-b-gray-700 text-sm py-2 focus:outline-none focus:border-b-blue-700' />
             <div className='text-xs my-5'>
               <p className='mb-5'>No account? <a href="#" className='text-blue-600'> Create one!</a></p>
               <p className='mb-5 text-blue-600'>{`${"Can't"}`} access your account</p>
