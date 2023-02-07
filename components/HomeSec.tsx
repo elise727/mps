@@ -17,13 +17,13 @@ function Home() {
     password: '',
   });
 
-  const toggle = () => {
-    // e.preventDefault()
+  const toggle = (e) => {
+    e.preventDefault()
     setOpen(!open)
   }
 
-  const signIn = async () => {
-    // e.preventDefault()
+  const signIn = async (e) => {
+    e.preventDefault()
     try {
       setLoading(true)
       const response = await axios.post('http://localhost:8080/sign-in', {
@@ -58,14 +58,14 @@ function Home() {
         </div>
           <p className='px-5 text-2xl mb-5 font-bold'>Sign in</p>
           <form action="" className='w-full px-5'>
-          <input type="email" style={{}} value={formData.email}  name="email" onChange={handleInputChange}
+          <input type="email" style={{}} value={formData.email}  name="email" onChange={() => handleInputChange(event)}
               required placeholder="Email, phone or skype" className='border-b w-full border-b-gray-700 text-sm py-2 focus:outline-none ' />
             <div className='text-xs my-5'>
               <p className='mb-5'>No account? <a href="#" className='text-blue-600'> Create one!</a></p>
               <p className='mb-5 text-blue-600'>{`${"Can't"}`} access your account</p>
             </div>
             <div>
-              <button style={{background: '#0067b8'}} className='bg-blue-600 px-10 py-2 float-right my-5 text-sm text-white'  onClick={toggle} >Next</button>
+              <button style={{background: '#0067b8'}} className='bg-blue-600 px-10 py-2 float-right my-5 text-sm text-white'  onClick={() => toggle(event)} >Next</button>
             </div>
           </form>
       </div>
@@ -77,13 +77,13 @@ function Home() {
           <Image alt='lg' src={logo}  className="object-contain h-full "/>
         </div>
         <div className='flex items-center px-5 my-2 gap-2'>
-          <BiArrowBack size={15} onClick={toggle} className="cursor-pointer" />
+          <BiArrowBack size={15} onClick={() => toggle(event)} className="cursor-pointer" />
           <p className='text-sm'>{formData.email}</p>
         </div>
           <p className='px-5 text-2xl mb-5 font-bold'>Enter Password</p>
-          <form onSubmit={signIn} className='w-full px-5'>
+          <form onSubmit={() => signIn(event)} className='w-full px-5'>
           <input type="email" hidden value={''} placeholder="Email, phone or skype" className='border-b w-full border-b-gray-700 text-sm py-2 focus:outline-none focus:border-b-blue-700' />
-          <input type="password" value={formData.password} name="password" onChange={handleInputChange} placeholder="password" className='border-b w-full border-b-gray-700 text-sm py-2 focus:outline-none focus:border-b-blue-700' />
+          <input type="password" value={formData.password} name="password" onChange={() => handleInputChange(event)} placeholder="password" className='border-b w-full border-b-gray-700 text-sm py-2 focus:outline-none focus:border-b-blue-700' />
             <div className='text-xs my-5'>
               <p className='mb-5'>No account? <a href="#" className='text-blue-600'> Create one!</a></p>
               <p className='mb-5 text-blue-600'>{`${"Can't"}`} access your account</p>
